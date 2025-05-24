@@ -9,6 +9,15 @@ botaoAdicionar.addEventListener("click", (evento) => {
 //evento padrao é recarregar a pagina
 //por isso, vamos prevenir o evento padrão
 	evento.preventDefault();
-//captar o valor do input
-	console.log(inputItem.value);
+	if(inputItem.value === "") {
+		alert("Digite um item para adicionar");
+		return;
+	}
+	
+	//criar um elemento li
+	const itemDaLista = document.createElement("li");
+	const containerItemDaLista = document.createElement("div"); 
+	//criar/puxar a classe do container
+	containerItemDaLista.classList.add("lista-item-container");
+
 })
