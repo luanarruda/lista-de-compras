@@ -1,4 +1,4 @@
-
+const listaDeCompras = document.getElementById("lista-de-compras");
 const inputItem = document.getElementById("input-item")
 //diferenca de let e const = let pode ser alterado, const não
 //const é uma constante, ou seja, não pode ser alterada
@@ -26,4 +26,16 @@ botaoAdicionar.addEventListener("click", (evento) => {
 	inputCheckbox.type = "checkbox";
 	//adicionar o id dinamico
 	inputCheckbox.id = "checkbox-" + contador++;
+	//adicionar o paragrafo
+	const nomeItem = document.createElement("p");
+	//nessa variavel vem o q digitamos no input
+	nomeItem.innerText = inputItem.value;
+
+	containerItemDaLista.appendChild(inputCheckbox);
+	containerItemDaLista.appendChild(nomeItem);
+
+	itemDaLista.appendChild(containerItemDaLista);
+	listaDeCompras.appendChild(itemDaLista);
+
+
 })
