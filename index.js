@@ -30,6 +30,15 @@ botaoAdicionar.addEventListener("click", (evento) => {
 	const nomeItem = document.createElement("p");
 	//nessa variavel vem o q digitamos no input
 	nomeItem.innerText = inputItem.value;
+	//estilo dinamico
+	inputCheckbox.addEventListener("click", function () {
+		if (inputCheckbox.checked) {
+			nomeItem.style.textDecoration = "line-through";
+		}
+		else {
+			nomeItem.style.textDecoration = "none";
+		}
+	});
 
 	containerItemDaLista.appendChild(inputCheckbox);
 	containerItemDaLista.appendChild(nomeItem);
@@ -53,5 +62,24 @@ botaoAdicionar.addEventListener("click", (evento) => {
 	itemDaLista.appendChild(itemData);
 	listaDeCompras.appendChild(itemDaLista);
 
+	verificarListaVazia();
 
 })
+
+//verifica se a lista está vazia	
+const mensagemListaVazia = document.querySelector(".mensagem-lista-vazia");
+
+
+function verificarListaVazia() {
+	const itensDaLista = listaDeCompras.querySelectorAll("li");
+	if(itensDaLista.length === 0) {
+		//no momento ele coloca a msg para aparecer
+		mensagemListaVazia.style.display = "block"
+	} 
+	//remvoe a mensagem se a lista não estiver vazia
+	else{
+		mensagemListaVazia.style.display = "none";
+	}
+ }
+
+ verificarListaVazia();
