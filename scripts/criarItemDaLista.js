@@ -1,10 +1,11 @@
 const inputItem = document.getElementById("input-item")
+let contador = 0;
 
 export function criarItemDaLista() {
 
 	//evento padrao é recarregar a pagina
 	//por isso, vamos prevenir o evento padrão
-	evento.preventDefault();
+
 	if (inputItem.value === "") {
 		alert("Digite um item para adicionar");
 		return;
